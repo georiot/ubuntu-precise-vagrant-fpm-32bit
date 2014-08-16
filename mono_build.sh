@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #Build Variables
-CHECKOUT='mono-3.4.0'
-VERSION='3.4.0'
-BUILD_DATE='08122014'
+CHECKOUT='mono-3.6.0'
+VERSION='3.6.0'
+BUILD_DATE='08162014'
 BIT_LEVEL='32bit'
 
 
@@ -11,6 +11,7 @@ cd /vagrant_data/ && git clone git://github.com/mono/mono.git ${CHECKOUT}-${BIT_
 git submodule init
 git submodule update --recursive
 ./autogen.sh --prefix=/usr/local
+make get-monolite-latest
 make
 make check
 rm -rf /tmp/installdir && mkdir -p /tmp/installdir
