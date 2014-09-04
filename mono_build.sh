@@ -32,6 +32,7 @@ make -j8
 
 # Run checks
 make -j8 check
+
 rm -rf /tmp/installdir && mkdir -p /tmp/installdir
 make install DESTDIR=/tmp/installdir && cd ..
 
